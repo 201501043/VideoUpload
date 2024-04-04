@@ -1,0 +1,88 @@
+<style>
+    .tag-options-container {
+        position: relative;
+    }
+
+    .tag-options {
+        min-height: fit-content;
+        max-height: 200px;
+        overflow: auto;
+        width: 100%;
+        background-color: antiquewhite;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: black;
+        border-radius: 0.5rem;
+    }
+
+    .tag-options::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tag-option {
+        background-color: aqua;
+    }
+
+    .tag-option:hover {
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .inline-btn {
+        display: inline;
+        padding: 0.5rem;
+        margin-left: 0.1rem;
+        border-radius: 0.5rem;
+    }
+
+    .p-i-1 {
+        padding-inline: 0.5rem;
+    }
+
+    .gap-1 {
+        gap: 10px;
+    }
+
+    input{
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        outline:none;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .b-768 {
+            flex-direction: column;
+            height: fit-content;
+        }
+    }
+</style>
+
+<h3>Tag</h3>
+<div class="tag-area">
+    <div class="flex b-768">
+        <div >
+            <div class="flex">
+                <input type="text" [formControl]="tagFormControl" (input)="this.isValueEntered = true" id="tagInput"
+                [value]="valueSelected" [autocomplete]="false">
+                <button type="button" (click)="onTagConfirm()" class="inline-btn">
+                    OK
+                </button>
+            </div>
+            <div class="tag-options-container">
+                <div class="tag-options" *ngIf="isValueEntered">
+                    <div *ngFor="let tag of searchResults" class="tag-option p-i-1" (click)="onTagSelect(tag)">
+                        <a>
+                            {{tag}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  class="flex wrap gap-1 p-i-1">
+            <app-pill *ngFor="let tag of selectedTag" title={{tag}}></app-pill>
+        </div>
+    </div>
+</div>

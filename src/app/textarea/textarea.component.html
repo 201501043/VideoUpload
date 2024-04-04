@@ -1,0 +1,8 @@
+
+
+
+<div class="input-item">
+    <h3>{{title}}</h3>
+    <textarea name="title" class="input" [cols]="this.cols"  (input)="this.changeLength($event)" [disabled]="false" [maxLength]="limit"></textarea>
+    <div class="input-length">{{length}}/{{limit}}</div>
+</div>
