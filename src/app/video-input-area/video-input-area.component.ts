@@ -104,7 +104,8 @@ export class VideoInputAreaComponent{
 
   async onVideoUpload($event: any) {
     $event.preventDefault();
-
+    
+    console.log(this.form)
     if (!this.form.valid){
       return
     }

@@ -65,7 +65,7 @@
     <div class="flex b-768">
         <div >
             <div class="flex">
-                <input type="text" [formControl]="tagFormControl" (input)="this.isValueEntered = true" id="tagInput"
+                <input type="text" [formControl]="tagTemp" (input)="this.isValueEntered = true" id="tagInput"
                 [value]="valueSelected" [autocomplete]="false">
                 <button type="button" (click)="onTagConfirm()" class="inline-btn">
                     OK

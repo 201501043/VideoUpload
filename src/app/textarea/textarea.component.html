@@ -3,6 +3,6 @@
 
 <div class="input-item">
     <h3>{{title}}</h3>
-    <textarea name="title" class="input" [cols]="this.cols"  (input)="this.changeLength($event)" [disabled]="false" [maxLength]="limit"></textarea>
+    <textarea name="title" [formControl]="formControlT" class="input" [cols]="this.cols"  (input)="this.changeLength($event)" [maxLength]="limit"></textarea>
     <div class="input-length">{{length}}/{{limit}}</div>
 </div>

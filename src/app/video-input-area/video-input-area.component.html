@@ -66,7 +66,7 @@
 
 
 <div class="main">
-    <form (submit)="onVideoUpload($event)">
+    <form (submit)="onVideoUpload($event)" [formGroup]="this.form">
         <div class="flex wrap b-768">
             <div class="container">
                 <label for="videoFile" *ngIf="!isVideoSelected">
@@ -87,11 +87,11 @@
 
             <div class="container bg-dark-2 flex col"  style="flex: 1">
                 <div class="input-content flex col">
-                        <app-textarea [title]="'Title'" [cols]="'30'" [formControl]="getControl('title')">
+                        <app-textarea [title]="'Title'" [cols]="'30'" [formControlT]="getControl('title')">
                         </app-textarea>
                         <app-tag-option [tagFormControl]="getControl('tags')" [tagTemp]="tagControl">
                         </app-tag-option>
-                        <app-textarea [title]="'Description'" [cols]="'50'" [rows]="'20'" [limit]="1000" [formControl]="getControl('description')" style="display: flex; flex: 1; flex-direction: column;">
+                        <app-textarea [title]="'Description'" [cols]="'50'" [rows]="'20'" [limit]="1000" [formControlT]="getControl('description')" style="display: flex; flex: 1; flex-direction: column;">
                         </app-textarea>
                 </div>
                 <div class="p-1">

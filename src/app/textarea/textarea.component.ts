@@ -11,7 +11,7 @@ export class TextareaComponent {
   @Input() cols!: string;
   @Input() rows!: string;
   @Input() limit:number = 100 
-  @Input() formControl!: FormControl;
+  @Input() formControlT!: FormControl;
   length = 0;
 
   changeLength(event: any){
